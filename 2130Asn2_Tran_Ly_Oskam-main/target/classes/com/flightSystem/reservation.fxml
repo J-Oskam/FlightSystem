@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="478.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flightSystem.Nhan_Nhu_Justin_ReservationSceneController">
+    <top>
+        <MenuBar prefHeight="15.0" prefWidth="697.0" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Flight">
+                    <items>
+                        <MenuItem fx:id="flightMenu" mnemonicParsing="false" onAction="#switchToFlightScene" text="Go To Flight Menu" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Passenger">
+                    <items>
+                        <MenuItem fx:id="reservationMenu" mnemonicParsing="false" onAction="#switchToPassengerScene" text="Go To Passenger Menu" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Back">
+                    <items>
+                        <MenuItem fx:id="backMenu" mnemonicParsing="false" onAction="#switchToMainScene" text="Go Back To Main Menu" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <right>
+        <VBox prefHeight="325.0" prefWidth="209.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="FlightNumberTextField" promptText="Flight Number" />
+                <TextField fx:id="SourceTextField" promptText="Source" />
+                <TextField fx:id="DestinationField" promptText="Destination" />
+                <TextField fx:id="FareField" promptText="Flight Fare" />
+                <TextField fx:id="FirstNameTextField" promptText="First Name" />
+                <TextField fx:id="LastNameTextField" promptText="Last Name" />
+                <TextField fx:id="AgeTextField" promptText="Age" />
+                <DatePicker fx:id="DateField" promptText="Date of Travel" />
+            </children>
+            <padding>
+                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+            </padding>
+        </VBox>
+    </right>
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="39.0" prefWidth="771.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="previousButton" mnemonicParsing="false" onAction="#onPreviousButtonClick" text="Previous" />
+                <Button fx:id="addButton" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add" />
+                <Button fx:id="viewButton" mnemonicParsing="false" onAction="#onViewButtonClick" text="View Flight Number" />
+                <!--<Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="Delete" />-->
+                <Button fx:id="nextButton" mnemonicParsing="false" onAction="#onNextButtonClick" text="Next" />
+            </children>
+            <padding>
+                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+            </padding>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="displayLabel" alignment="CENTER" prefHeight="168.0" prefWidth="476.0" text="Welcome To Reservation Page!">
+                    <font>
+                        <Font name="Century Gothic" size="15.0" />
+                    </font>
+                </Label>
+                <ListView fx:id="passengerListView" prefHeight="200.0" prefWidth="200.0" />
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
+
